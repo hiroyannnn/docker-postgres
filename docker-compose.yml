@@ -1,0 +1,12 @@
+db-postgres:
+  build: ./postgres/10/alpine/
+  ports:
+   - "5432:5432"
+  environment:
+   - POSTGRES_USER=postgres
+   - POSTGRES_PASSWORD=mysecretpassword1234
+   - PGPASSWORD=mysecretpassword1234
+   - POSTGRES_DB=testdb
+   - DATABASE_HOST=localhost
+  volumes:
+   - ./data:/data
